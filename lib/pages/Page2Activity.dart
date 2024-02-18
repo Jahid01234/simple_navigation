@@ -1,15 +1,23 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:simple_navigation/main.dart';
+import 'package:simple_navigation/pages/Page1Activity.dart';
 
 class Page2Activity extends StatelessWidget{
+
+  String message;
+  Page2Activity(
+  this.message,
+  {super.key}
+  );
+
   @override
   Widget build(BuildContext context) {
 
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.cyan,
-          title: Text('Page-2'),
+          title: Text(message),
           centerTitle: true,
         ),
       body:Center(
@@ -19,10 +27,10 @@ class Page2Activity extends StatelessWidget{
 
             ElevatedButton(onPressed: ()
             {
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>Page1Activity('page-2Activity to Page1Activity')));
 
             },
-                child: Text('Go to Home Page')),
+                child: Text('Go to Page-1')),
 
           ],
         ) ,

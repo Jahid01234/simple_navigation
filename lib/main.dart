@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:simple_navigation/pages/Page1Activity.dart';
 import 'package:simple_navigation/pages/Page2Activity.dart';
@@ -19,13 +20,14 @@ class MyApp extends StatelessWidget {
 }
 
 class HomePage extends StatelessWidget{
+
   @override
   Widget build(BuildContext context) {
 
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.cyan,
-        title: Text('Home'),
+        title: Text('Home page'),
         centerTitle: true,
       ),
 
@@ -36,14 +38,14 @@ class HomePage extends StatelessWidget{
 
           ElevatedButton(onPressed: ()
           {
-            Navigator.push(context, MaterialPageRoute(builder: (context)=>Page1Activity()));
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>Page1Activity('Home to Page-1Activity')));
 
           },
               child: Text('Go to page-1')),
 
           ElevatedButton(onPressed: ()
           {
-            Navigator.push(context, MaterialPageRoute(builder: (context)=>Page2Activity()));
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>Page2Activity('Home to Page-2Activity')));
             },
               child: Text('Go to page-2')),
 
